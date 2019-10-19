@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Map;
 
@@ -283,11 +285,11 @@ public class CalendarSelectView extends LinearLayout {
 
     private void updateViewVisibility() {
         if (selectType == SINGLE) {
-            define.setVisibility(View.GONE);
+            //define.setVisibility(View.GONE);
             timeParent.setVisibility(View.GONE);
             clear.setVisibility(View.GONE);
         } else if (selectType == MULT) {
-            define.setVisibility(View.VISIBLE);
+            //define.setVisibility(View.VISIBLE);
             timeParent.setVisibility(View.VISIBLE);
             clear.setVisibility(View.VISIBLE);
         }
@@ -322,6 +324,17 @@ public class CalendarSelectView extends LinearLayout {
                 }
             }
         });
+    }
+
+    public ArrayList<DayTimeEntity> getDate(){
+        ArrayList<DayTimeEntity> list = new ArrayList<>();
+        if (selectType == SINGLE) {
+            list.add(startDayTime);
+        } else if (selectType == MULT) {
+            list.add(startDayTime);
+            list.add(endDayTime);
+        }
+        return list;
     }
 
     public void setConfirmCallback(ConfirmSelectDateCallback selectDateCallback) {
