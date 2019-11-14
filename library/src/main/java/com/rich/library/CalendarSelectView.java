@@ -97,10 +97,10 @@ public class CalendarSelectView extends LinearLayout {
         endDayTime = new DayTimeEntity(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), 0, -1, -1);
 
         startCalendarDate = Calendar.getInstance();
-        startCalendarDate.add(Calendar.YEAR, -1);
+        startCalendarDate.add(Calendar.YEAR, -10);
         startCalendarDate.set(Calendar.DATE, 1);
         endCalendarDate = Calendar.getInstance();
-        endCalendarDate.add(Calendar.MONTH, 3);
+        endCalendarDate.add(Calendar.MONTH, 0);
         endCalendarDate.set(Calendar.DATE, 1);
         endCalendarDate.add(Calendar.MONTH, 1);
         endCalendarDate.add(Calendar.DATE, -1);
